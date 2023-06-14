@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="hello">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <h1><a class="navbar-brand" href="#"><h1>WEATHER APP <svg xmlns="http://www.w3.org/2000/svg" width="45" height="auto" fill="currentColor" class="bi bi-cloud-sun-fill" viewBox="0 0 16 16">
+          <path d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z"/>
+          <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+        </svg> </h1></a></h1>
+          <form class="d-flex" role="search">
+            <input id="city"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit" id="submit">
+              Search
+            </button>
+          </form>
+        <!-- </div> -->
+      </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="my-4 text-center" id="hello1">Weather for <span id="cityName"></span></h1>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Temperature Info <svg xmlns="http://www.w3.org/2000/svg" width="30" height="auto" fill="currentColor" class="bi bi-thermometer-sun" viewBox="0 0 16 16">
+                  <path d="M5 12.5a1.5 1.5 0 1 1-2-1.415V2.5a.5.5 0 0 1 1 0v8.585A1.5 1.5 0 0 1 5 12.5z"/>
+                  <path d="M1 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM3.5 1A1.5 1.5 0 0 0 2 2.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0L5 10.486V2.5A1.5 1.5 0 0 0 3.5 1zm5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5zm4.243 1.757a.5.5 0 0 1 0 .707l-.707.708a.5.5 0 1 1-.708-.708l.708-.707a.5.5 0 0 1 .707 0zM8 5.5a.5.5 0 0 1 .5-.5 3 3 0 1 1 0 6 .5.5 0 0 1 0-1 2 2 0 0 0 0-4 .5.5 0 0 1-.5-.5zM12.5 8a.5.5 0 0 1 .5-.5h1a.5.5 0 1 1 0 1h-1a.5.5 0 0 1-.5-.5zm-1.172 2.828a.5.5 0 0 1 .708 0l.707.708a.5.5 0 0 1-.707.707l-.708-.707a.5.5 0 0 1 0-.708zM8.5 12a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5z"/>
+                </svg> </h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="temp2"></span>&deg;C<small class="text-body-secondary fw-light"></small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Temperature is <span id="temp"></span></li>
+                  <li>Min Temperature is <span id="min_temp"></span></li>
+                  <li>Max Temperature is <span id="max_temp"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">Humidity Info</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="humidity2"></span><small class="text-body-secondary fw-light"> %</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Humidity is <span id="humidity"></span></li>
+                  <li>Feels Like <span id="feels_like"></span></li>
+                  <li>Wind degree is <span id="wind_degrees"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Wind Info</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="wind_speed2"></span><small class="text-body-secondary fw-light"> km/hr</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Wind Speed is <span id="wind_speed"></span></li>
+                  <li>Sunrise Time is <span id="sunrise"></span> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="auto" fill="currentColor" class="bi bi-sunrise-fill" viewBox="0 0 16 16">
+                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l1.5 1.5a.5.5 0 0 1-.708.708L8.5 2.707V4.5a.5.5 0 0 1-1 0V2.707l-.646.647a.5.5 0 1 1-.708-.708l1.5-1.5zM2.343 4.343a.5.5 0 0 1 .707 0l1.414 1.414a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .707l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM11.709 11.5a4 4 0 1 0-7.418 0H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                  </svg> </li>
+                  <li>Sunset Time is <span id="sunset"></span> <svg xmlns="http://www.w3.org/2000/svg" width="23" height="auto" fill="currentColor" class="bi bi-sunset-fill" viewBox="0 0 16 16">
+                    <path d="M7.646 4.854a.5.5 0 0 0 .708 0l1.5-1.5a.5.5 0 0 0-.708-.708l-.646.647V1.5a.5.5 0 0 0-1 0v1.793l-.646-.647a.5.5 0 1 0-.708.708l1.5 1.5zm-5.303-.51a.5.5 0 0 1 .707 0l1.414 1.413a.5.5 0 0 1-.707.707L2.343 5.05a.5.5 0 0 1 0-.707zm11.314 0a.5.5 0 0 1 0 .706l-1.414 1.414a.5.5 0 1 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zM11.709 11.5a4 4 0 1 0-7.418 0H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1h-3.79zM0 10a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 0 10zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+                  </svg> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
